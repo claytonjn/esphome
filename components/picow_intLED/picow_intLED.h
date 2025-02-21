@@ -10,7 +10,7 @@ namespace esphome{
 namespace picow_intLED {
     
 // Custom binary output, for exposing binary states
-class picow_intLED : public Component, public output::BinaryOutput {
+class PicoWIntLed : public output::BinaryOutput, public Component {
 
     public:
 

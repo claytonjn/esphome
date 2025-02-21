@@ -4,7 +4,7 @@ from esphome.components import output
 from esphome.const import CONF_ID
 
 # Declare the component in ESPHome's namespace
-picow_intLED = cg.esphome_ns.namespace('picow_intLED')
+picow_intLED_ns = cg.esphome_ns.namespace('picow_intLED')
 PicoWIntLed = picow_intLED_ns.class_(
     "PicoWIntLed", output.BinaryOutput, cg.Component
 )
@@ -18,7 +18,7 @@ CONFIG_SCHEMA = output.BINARY_OUTPUT_SCHEMA.extend(
 ).extend(cv.COMPONENT_SCHEMA)
 
 # Register the component in ESPHome
-async def setup(config):
+async def to_code(config):
     var = cg.new_Pvariable(config[CONF_ID])
     await output.register_output(var, config)
     await cg.register_component(var, config)
