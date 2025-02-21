@@ -1,6 +1,6 @@
 // https://community.home-assistant.io/t/rpi-pico-w-onboard-temperature-sensor-and-onboard-led/564904/6
+// C++ Code (picow_intLED.h)
 
-// picow_intLED.h
 #include "esphome.h"
 using namespace esphome;
 
@@ -11,6 +11,7 @@ class picow_intLED : public Component, public BinaryOutput {
 
     void setup() override {
         // This will be called by App.setup()
+        
         pinMode(LED_BUILTIN, OUTPUT);
     }
 
