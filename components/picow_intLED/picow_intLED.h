@@ -5,6 +5,7 @@
 
 #include "esphome/core/component.h"
 #include "esphome/components/output/binary_output.h"
+#include <Arduino.h>
 
 namespace esphome{
 namespace picow_intLED {
@@ -14,16 +15,8 @@ class PicoWIntLed : public output::BinaryOutput, public Component {
 
     public:
 
-    void setup() override {
-        // This will be called by App.setup()
-        
-        pinMode(LED_BUILTIN, OUTPUT);
-    }
-
-    void write_state(bool state) override {
-        digitalWrite(LED_BUILTIN, state);
-    }
-
+    void setup() override;
+    void write_state(bool state) override;
     void dump_config() override;
 };
 
